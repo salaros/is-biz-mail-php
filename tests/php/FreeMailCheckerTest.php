@@ -25,10 +25,11 @@ final class FreeMailCheckerTest extends TestCase
     /**
      * Check if any free domain is defined
      * @covers      ::getFreeDomains
+     * @test
      *
      * @return void
      */
-    public function testCanBeCreatedFromValidEmailAddress()
+    public function hasFreeDomainsListPopulated()
     {
         $obj = new FreeMailChecker();
         $this->assertNotEmpty($obj->getFreeDomains());
@@ -40,11 +41,12 @@ final class FreeMailCheckerTest extends TestCase
      * @param string $freeEmail A free email address
      *
      * @dataProvider getFreeMailDomainSamples
-     * @covers       ::isFreeMailAddress
+     * @covers      ::isFreeMailAddress
+     * @test
      *
      * @return void
      */
-    public function testEmailAddressIsOnFreeDomain($freeEmail)
+    public function emailAddressIsOnFreeDomain($freeEmail)
     {
         $obj = new FreeMailChecker();
         $this->assertSame(true, $obj->isFreeMailAddress($freeEmail));
@@ -56,11 +58,12 @@ final class FreeMailCheckerTest extends TestCase
      * @param string $businessEmail A business email address
      *
      * @dataProvider getBusinessMailDomainSamples
-     * @covers       ::isFreeMailAddress
+     * @covers      ::isFreeMailAddress
+     * @test
      *
      * @return void
      */
-    public function testEmailAddressIsOnBusinessDomain($businessEmail)
+    public function emailAddressIsOnBusinessDomain($businessEmail)
     {
         $obj = new FreeMailChecker();
         $this->assertSame(false, $obj->isFreeMailAddress($businessEmail));
@@ -71,13 +74,14 @@ final class FreeMailCheckerTest extends TestCase
      *
      * @param string $businessEmail A business email address
      *
-     * @depends      testEmailAddressIsOnBusinessDomain
+     * @depends      emailAddressIsOnBusinessDomain
      * @dataProvider getBusinessMailDomainSamples
-     * @covers       ::isValid
+     * @covers      ::isValid
+     * @test
      *
      * @return void
      */
-    public function testEmailAddressIsValid($businessEmail)
+    public function emailAddressIsValid($businessEmail)
     {
         $obj = new FreeMailChecker();
         $this->assertSame(true, $obj->isValid($businessEmail));
@@ -85,8 +89,8 @@ final class FreeMailCheckerTest extends TestCase
 
     /**
      * Provides a list of free email addresses
-     *
-     * @codeCoverageIgnore
+     * @doesNotPerformAssertions
+     * @coversNothing
      *
      * @return array
      */
@@ -96,13 +100,15 @@ final class FreeMailCheckerTest extends TestCase
             array('free_@gmail.com'),
             array('free_@yahoo.it'),
             array('free_@yandex.ru'),
+            array('free_@live.com'),
+            array('free_@acme.onmicrosoft.com'),
         ];
     }
 
     /**
      * Provides a list of business email addresses
-     *
-     * @codeCoverageIgnore
+     * @doesNotPerformAssertions
+     * @coversNothing
      *
      * @return array
      */

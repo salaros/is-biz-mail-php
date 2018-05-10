@@ -75,6 +75,7 @@ class FreeMailChecker
      * contains both full domains and widlcards
      *
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @codeCoverageIgnore
      *
      * @return void
      */
