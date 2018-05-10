@@ -1,7 +1,7 @@
 <?php
 /**
  * FreeMailChecker class tells you whether a given email address
- * is free (gmail.com, yahoo.es, yandex.ru etc) or not.
+ * is free e.g. gmail.com, yahoo.es, yandex.ru etc or not.
  * The list of emails used by FreeMailChecker is taken from here:
  * http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf
  * All credits for the list itself go to SpamAssasin authors and contributors
@@ -33,7 +33,7 @@ class FreeMailChecker
     public function isValid($email)
     {
         return false !== filter_var($email, FILTER_VALIDATE_EMAIL) &&
-              !self::isFreeMailAddress($email);
+              !$this->isFreeMailAddress($email);
     }
 
     /**
