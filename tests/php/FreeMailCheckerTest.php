@@ -23,6 +23,7 @@ final class FreeMailCheckerTest extends TestCase
 {
     /**
      * Check if any free domain is defined
+     * @covers FreeMailChecker::getFreeDomains
      *
      * @return void
      */
@@ -38,6 +39,7 @@ final class FreeMailCheckerTest extends TestCase
      * @param string $freeEmail A free email address
      *
      * @dataProvider getFreeMailDomainSamples
+     * @covers       FreeMailChecker::isFreeMailAddress
      *
      * @return void
      */
@@ -53,6 +55,7 @@ final class FreeMailCheckerTest extends TestCase
      * @param string $businessEmail A business email address
      *
      * @dataProvider getBusinessMailDomainSamples
+     * @covers       FreeMailChecker::isFreeMailAddress
      *
      * @return void
      */
@@ -69,6 +72,7 @@ final class FreeMailCheckerTest extends TestCase
      *
      * @depends      testEmailAddressIsOnBusinessDomain
      * @dataProvider getBusinessMailDomainSamples
+     * @covers       FreeMailChecker::isValid
      *
      * @return void
      */
