@@ -59,7 +59,7 @@ class FreeMailChecker
         $parts = explode("@", $email);
         $domain = end($parts);
         foreach ($this->getFreeDomains() as $freeDomain) {
-            if (false !== stripos($freeDomain, $domain) && $freeDomain === $domain) {
+            if (false !== stripos($freeDomain, '*') && $freeDomain === $domain) {
                 return true;
             }
 
