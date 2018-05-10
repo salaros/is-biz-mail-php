@@ -1,0 +1,37 @@
+{
+    "name"              : "salaros/free-mailchecker",
+    "license"           : "MIT",
+    "description"       : " FreeMailChecker class tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not",
+    "homepage"          : "https://github.com/salaros/free-mailchecker",
+    "type"              : "library",
+    "keywords": [
+        "email",
+        "address",
+        "checker",
+        "free",
+        "domain",
+        "blacklist"
+    ],
+    "authors": [
+        {
+            "name"      : "Zhmayev Yaroslav",
+            "email"     : "salaros@salaros.com",
+            "homepage"  : "http://salaros.com",
+            "role"      : "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/php"
+        ]
+    },
+    "require-dev": {
+        "php"               : ">=5.3|~7.0",
+        "phpunit/phpunit"   : "^4|^5|^7"
+    },
+    "scripts": {
+        "test": [
+            "phpunit tests/php/*.php"
+        ]
+    }
+}
