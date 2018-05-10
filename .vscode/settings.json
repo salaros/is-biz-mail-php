@@ -1,0 +1,10 @@
+{
+    // PHP CodeSniffer settings
+    "phpcs.enable": true,
+    "phpcs.standard": ".vscode/phpcs.xml",
+
+    // Exclude files from File Explorer
+    "files.exclude": {
+        "**/vendor":            true,
+    },
+}

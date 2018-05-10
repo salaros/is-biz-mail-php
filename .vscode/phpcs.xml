@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="My PSR2">
+
+  <description>Specifi PSR2 coding standard.</description>
+
+  <arg name="tab-width" value="4"/>
+  <rule ref="PSR2"/>
+
+  <fileset dir="${basedir}/src/php">
+    <include name="**/*.php"/>
+  </fileset>
+
+  <fileset dir="${basedir}/tests/php">
+    <include name="**/*.php"/>
+  </fileset>
+</ruleset>
