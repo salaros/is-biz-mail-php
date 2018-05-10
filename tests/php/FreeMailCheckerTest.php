@@ -18,12 +18,13 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Test case for FreeMailChecker class
+ * @coversDefaultClass \Salaros\Email\FreeMailChecker
  */
 final class FreeMailCheckerTest extends TestCase
 {
     /**
      * Check if any free domain is defined
-     * @covers FreeMailChecker::getFreeDomains
+     * @covers      ::getFreeDomains
      *
      * @return void
      */
@@ -39,7 +40,7 @@ final class FreeMailCheckerTest extends TestCase
      * @param string $freeEmail A free email address
      *
      * @dataProvider getFreeMailDomainSamples
-     * @covers       FreeMailChecker::isFreeMailAddress
+     * @covers       ::isFreeMailAddress
      *
      * @return void
      */
@@ -55,7 +56,7 @@ final class FreeMailCheckerTest extends TestCase
      * @param string $businessEmail A business email address
      *
      * @dataProvider getBusinessMailDomainSamples
-     * @covers       FreeMailChecker::isFreeMailAddress
+     * @covers       ::isFreeMailAddress
      *
      * @return void
      */
@@ -72,7 +73,7 @@ final class FreeMailCheckerTest extends TestCase
      *
      * @depends      testEmailAddressIsOnBusinessDomain
      * @dataProvider getBusinessMailDomainSamples
-     * @covers       FreeMailChecker::isValid
+     * @covers       ::isValid
      *
      * @return void
      */

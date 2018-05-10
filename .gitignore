@@ -1,3 +1,4 @@
 # PHP stuff
 vendor/
 composer.lock
+tests/php/reports/
