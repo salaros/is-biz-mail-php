@@ -7,5 +7,18 @@ filter:
 
 build:
     tests:
-        before:
-            - 'composer install --dev'
+        override:
+            - phpunit
+
+    nodes:
+        php:
+            environment:
+                php: 5.4
+
+        php56:
+            environment:
+                php: 5.6
+
+        php71:
+            environment:
+                php: 7.1
