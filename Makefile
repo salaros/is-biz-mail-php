@@ -4,6 +4,7 @@ DOMAINS_END		:= free email providers end
 
 NODE_SRC		:= ./src/node/index.js
 PHP_SRC			:= ./src/php/IsBizMail.php
+DOTNET_SRC		:= ./src/dotnet/IsBizMail.cs
 JS_SRC 			:= ./src/javascript/is-biz-mail.js
 JS_TEMP_SRC		:= ./build/freemail_domains.js
 JS_CLOSURE 		:= (function(global){
@@ -45,6 +46,11 @@ javascript: node
 	@sed 's/^    $$//' -i $(JS_TEMP_SRC)
 	@sed '/$(JS_CLOSURE)/r $(JS_TEMP_SRC)' -i $(JS_SRC)
 	@sed 's/module.exports/global.isBizMail/g' -i $(JS_SRC)
+
+dotnet: download
+	@sed '/$(DOMAINS_START)/,/$(DOMAINS_END)/{//!d}' -i $(DOTNET_SRC)
+	@sed '/$(DOMAINS_START)/ r $(DOMAINS_LIST)' -i $(DOTNET_SRC)
+	@sed 's/^"/                "/g' -i $(DOTNET_SRC)
 
 tag:
 	@sed 's/^    \"version\": .*$$/    "version": "$(GIT_TAG)",/g' -i ./package.json

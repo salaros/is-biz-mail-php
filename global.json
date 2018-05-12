@@ -1,0 +1,9 @@
+{
+    "projects": [
+        "src/dotnet",
+        "test/dotnet"
+    ],
+    "sdk": {
+        "version": "2.1.105"
+    }
+}

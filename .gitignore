@@ -8,3 +8,10 @@ test/php/reports/
 
 # NPM modules
 node_modules/
+
+# .NET
+src/dotnet/bin
+src/dotnet/obj
+test/dotnet/bin
+test/dotnet/obj
+\.vs/
