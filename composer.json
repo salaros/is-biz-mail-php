@@ -26,8 +26,9 @@
         ]
     },
     "require-dev": {
-        "php"               : ">=5.3|~7.0",
-        "phpunit/phpunit"   : "^4|^5|^7"
+        "php"                       : ">=5.3|~7.0",
+        "phpunit/phpunit"           : "^4|^5|^7",
+        "friendsofphp/php-cs-fixer" : "^2.11"
     },
     "scripts": {
         "test": [

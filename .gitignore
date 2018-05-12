@@ -1,3 +1,6 @@
+# Build dir
+build/
+
 # PHP stuff
 vendor/
 composer.lock
