@@ -1,8 +1,8 @@
 (function(global){
     /**
-     * FreeMailChecker class tells you whether a given email address
+     * isBizMail tells you whether a given email address
      * is free e.g. gmail.com, yahoo.es, yandex.ru etc or not.
-     * The list of emails used by FreeMailChecker is taken from here:
+     * The list of emails used by isBizMail is taken from here:
      * http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf
      * All credits for the list itself go to SpamAssasin authors and contributors
      */
@@ -37,7 +37,7 @@
         return s.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
     }
 
-    global.FreeMailChecker = {
+    global.isBizMail = {
         isValid: function (email) {
         email = email.toLowerCase();
         if(!isValidEmail.test(email)) { return false; }

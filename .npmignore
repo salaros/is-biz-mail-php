@@ -1,0 +1,29 @@
+# Junk files
+Thumbs.db
+.*.swp
+._*
+.DS_Store
+
+# Folders
+build
+vendor
+node_modules
+src/php
+test/php
+
+# Dot files
+.git
+.scrutinizer.yml
+.travis.yml
+.gitignore
+.gitattributes
+.npmignore
+
+# Files
+composer.*
+phpunit.yml
+Makefile
+README.md
+CHANGELOG.md
+LICENSE
+index.html

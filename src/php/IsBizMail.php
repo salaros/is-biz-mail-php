@@ -1,13 +1,13 @@
 <?php
 /**
- * FreeMailChecker class tells you whether a given email address
+ * IsBizMail tells you whether a given email address
  * is free e.g. gmail.com, yahoo.es, yandex.ru etc or not.
- * The list of emails used by FreeMailChecker is taken from here:
+ * The list of emails used by IsBizMail is taken from here:
  * http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf
  * All credits for the list itself go to SpamAssasin authors and contributors
  *
  * @category PHPUnit
- * @package  FreeMailChecker
+ * @package  IsBizMail
  * @author   Zhmayev Yaroslav <salaros@salaros.com>
  * @license  MIT https://opensource.org/licenses/MIT
  * @link     https://github.com/salaros/free-mailchecker
@@ -18,7 +18,7 @@ namespace Salaros\Email;
 /**
  * Tells you whether a given email address is free  or not
  */
-class FreeMailChecker
+class IsBizMail
 {
     private static $freeMailDomains;
 
@@ -571,4 +571,4 @@ class FreeMailChecker
 }
 
 // phpcs:disable PSR1.Files.SideEffects
-FreeMailChecker::init();
+IsBizMail::init();

@@ -1,4 +1,4 @@
-Free Email Domain Checker
+Business Email Checker
 =========================
 
 [![License](https://poser.pugx.org/salaros/free-mailchecker/license)](https://packagist.org/packages/salaros/free-mailchecker)
@@ -6,8 +6,8 @@ Free Email Domain Checker
 ![GitHub language count](https://img.shields.io/github/languages/count/salaros/free-mailchecker.svg)
 ![GitHub issues](https://img.shields.io/github/issues/salaros/free-mailchecker.svg)
 
-FreeMailChecker class tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not.
-The list of emails used by FreeMailChecker is taken from [here](http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf).
+**isBizMail** tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not.
+The list of emails used by **isBizMail**  is taken from [here](http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf).
 All credits for the list itself go to SpamAssasin authors and contributors.
 
 ## PHP (installable via Composer) ##

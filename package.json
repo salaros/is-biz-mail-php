@@ -1,8 +1,8 @@
 {
-    "name": "free-mailchecker",
+    "name": "is-biz-mail",
     "version": "0.1.7",
     "license": "MIT",
-    "description": " FreeMailChecker class tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not",
+    "description": "isBizMail tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not",
     "homepage": "https://github.com/salaros/free-mailchecker",
     "devDependencies": {
         "mocha": "^5.1.1",
