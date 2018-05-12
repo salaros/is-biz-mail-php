@@ -37,16 +37,6 @@ class IsBizMail
     }
 
     /**
-     * Gets the list of all known free mail box providers
-     *
-     * @return array
-     */
-    public function getFreeDomains()
-    {
-        return self::$freeMailDomains;
-    }
-
-    /**
      * Returns true if a given email belong to one of known free mail box providers
      *
      * @param string $email Email address
@@ -68,6 +58,16 @@ class IsBizMail
             }
         }
         return false;
+    }
+
+    /**
+     * Gets the list of all known free mail box providers
+     *
+     * @return array
+     */
+    public function getFreeDomains()
+    {
+        return self::$freeMailDomains;
     }
 
     /**

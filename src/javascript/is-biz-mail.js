@@ -10,7 +10,7 @@
 
     function isFreeMailAddress(email) {
         if (email === undefined || -1 === email.indexOf('@')) {
-            throw"Please supply a valid email address";
+            throw "Please supply a valid email address";
         }
 
         return freeMailDomains.some(function(freeDomain) {
@@ -39,15 +39,17 @@
 
     global.isBizMail = {
         isValid: function (email) {
-        email = email.toLowerCase();
-        if(!isValidEmail.test(email)) { return false; }
-        return !isFreeMailAddress(email);
+            if (undefined === email) { throw "Please supply a valid email address"; }
+            email = email.toLowerCase();
+            return (isValidEmail.test(email))
+                ? !isFreeMailAddress(email)
+                : false;
         },
         isFreeMailAddress: function (email) {
-        return isFreeMailAddress(email);
+            return isFreeMailAddress(email);
         },
         getFreeDomains: function () {
-        return freeMailDomains;
+            return freeMailDomains;
         }
     };
 
