@@ -5,3 +5,6 @@ build/
 vendor/
 composer.lock
 tests/php/reports/
+
+# NPM modules
+node_modules/
