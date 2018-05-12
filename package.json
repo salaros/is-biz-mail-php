@@ -1,5 +1,6 @@
 {
     "name": "free-mailchecker",
+    "version": "0.1.7",
     "license": "MIT",
     "description": " FreeMailChecker class tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not",
     "homepage": "https://github.com/salaros/free-mailchecker",
@@ -7,6 +8,7 @@
         "mocha": "^5.1.1",
         "should": "^13.2.1"
     },
+    "main": "src/node",
     "scripts": {
         "test": " ./node_modules/mocha/bin/mocha"
     }
