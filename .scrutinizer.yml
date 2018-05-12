@@ -8,13 +8,6 @@ filter:
         - "vendor/"
 
 build:
-    tests:
-        override:
-            -
-                command: 'vendor/bin/phpunit --coverage-clover=tests/php/reports/clover.xml'
-                coverage:
-                    file: 'tests/php/reports/clover.xml'
-                    format: 'clover'
     nodes:
         analysis:
             tests:
@@ -32,3 +25,15 @@ build:
         php71:
             environment:
                 php: 7.1
+
+    project_setup:
+        before:
+            - make php
+
+    tests:
+        override:
+            -
+                command: 'vendor/bin/phpunit --coverage-clover=tests/php/reports/clover.xml'
+                coverage:
+                    file: 'tests/php/reports/clover.xml'
+                    format: 'clover'
