@@ -9,6 +9,8 @@ JS_TEMP_SRC		:= ./build/freemail_domains.js
 JS_CLOSURE 		:= (function(global){
 JS_CLOSURE_END 	:= })((
 
+GIT_TAG			:= $(shell git describe --tags `git rev-list --tags --max-count=1`)
+
 .PHONY: all
 
 all: php javascript
@@ -43,3 +45,6 @@ javascript: node
 	@sed 's/^    $$//' -i $(JS_TEMP_SRC)
 	@sed '/$(JS_CLOSURE)/r $(JS_TEMP_SRC)' -i $(JS_SRC)
 	@sed 's/module.exports/global.isBizMail/g' -i $(JS_SRC)
+
+tag:
+	@sed 's/^    \"version\": .*$$/    "version": "$(GIT_TAG)",/g' -i ./package.json
