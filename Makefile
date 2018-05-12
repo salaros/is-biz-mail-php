@@ -5,6 +5,9 @@ ARRAY_END_COMMENT := free email providers end
 
 all: php
 
+clean:
+	@find ./build -mindepth 1 -delete
+
 prepare:
 	@mkdir -pv ./build
 	@composer install
