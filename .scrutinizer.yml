@@ -12,6 +12,10 @@ filter:
 build:
     nodes:
         analysis:
+            project_setup:
+                before:
+                    - make all
+
             tests:
                 override:
                     - php-scrutinizer-run
@@ -28,10 +32,6 @@ build:
         php71:
             environment:
                 php: 7.1
-
-    project_setup:
-        before:
-            - make all
 
     tests:
         override:
