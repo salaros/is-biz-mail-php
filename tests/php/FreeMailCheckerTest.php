@@ -96,13 +96,11 @@ final class FreeMailCheckerTest extends TestCase
      */
     public function getFreeMailDomainSamples()
     {
-        return [
-            array('free_@gmail.com'),
-            array('free_@yahoo.it'),
-            array('free_@yandex.ru'),
-            array('free_@live.com'),
-            array('free_@acme.onmicrosoft.com'),
-        ];
+        $emailSamples = file_get_contents(sprintf("%s/emailSamples.json", dirname(__DIR__)));
+        $emailSamples = json_decode($emailSamples, false);
+        return array_map(function ($freeEmail) {
+            return array($freeEmail);
+        }, $emailSamples->free);
     }
 
     /**
@@ -114,10 +112,10 @@ final class FreeMailCheckerTest extends TestCase
      */
     public function getBusinessMailDomainSamples()
     {
-        return array(
-            array('biz_@microsoft.com'),
-            array('biz_@apple.com'),
-            array('biz_@mysql.org'),
-        );
+        $emailSamples = file_get_contents(sprintf("%s/emailSamples.json", dirname(__DIR__)));
+        $emailSamples = json_decode($emailSamples, false);
+        return array_map(function ($businessEmail) {
+            return array($businessEmail);
+        }, $emailSamples->business);
     }
 }

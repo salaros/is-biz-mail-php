@@ -1,0 +1,15 @@
+{
+        "business": [
+                "business__@microsoft.com",
+                "business__@apple.com",
+                "business__@mysql.org"
+        ],
+
+        "free": [
+                "free__@gmail.com",
+                "free__@yahoo.it",
+                "free__@yandex.ru",
+                "free__@live.com",
+                "free__@acme.onmicrosoft.com"
+        ]
+}

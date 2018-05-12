@@ -1,33 +1,21 @@
 require('../../src/javascript/FreeMailChecker.js');
 
 var should = require('should'),
-    assert = require('assert');
-
-var businessEmails = [
-        'biz_@microsoft.com',
-        'biz_@apple.com',
-        'biz_@mysql.org',
-    ],
-    freeEmails = [
-        'free_@gmail.com',
-        'free_@yahoo.it',
-        'free_@yandex.ru',
-        'free_@live.com',
-        'free_@acme.onmicrosoft.com',
-    ];
+    assert = require('assert'),
+    emailSamples = require('../emailSamples.json');
 
 describe('FreeMailChecker.isFreeMailAddress', function () {
     it('FreeMailChecker.isFreeMailAddress - is defined', function () {
         ('isFreeMailAddress' in FreeMailChecker).should.equal(true);
     });
 
-    businessEmails.forEach(function(email) {
+    emailSamples.business.forEach(function(email) {
         it(email + ' - not free (business)', function () {
             FreeMailChecker.isFreeMailAddress(email).should.equal(false);
         });
     });
 
-    freeEmails.forEach(function(email) {
+    emailSamples.free.forEach(function(email) {
         it(email + ' - is free', function () {
             FreeMailChecker.isFreeMailAddress(email).should.equal(true);
         });
@@ -50,13 +38,13 @@ describe('FreeMailChecker.isValid', function () {
         ('isValid' in FreeMailChecker).should.equal(true);
     });
 
-    businessEmails.forEach(function(email) {
+    emailSamples.business.forEach(function(email) {
         it(email + ' - is valid and not free (business)', function () {
             FreeMailChecker.isValid(email).should.equal(true);
         });
     });
 
-    freeEmails.forEach(function(email) {
+    emailSamples.free.forEach(function(email) {
         it(email + ' - is valid and free', function () {
             FreeMailChecker.isValid(email).should.equal(false);
         });
