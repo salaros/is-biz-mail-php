@@ -1,11 +1,13 @@
 checks:
     php: true
+    javascript: true
 
 filter:
     excluded_paths:
         - "tests/"
     dependency_paths:
         - "vendor/"
+        - "node_modules/"
 
 build:
     nodes:
@@ -13,6 +15,7 @@ build:
             tests:
                 override:
                     - php-scrutinizer-run
+                    - js-scrutinizer-run
 
         php:
             environment:
