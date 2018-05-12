@@ -15,10 +15,11 @@
         }
 
         return freeMailDomains.some(function(freeDomain) {
+            var emailDomain = email.split('@')[1];
             if (-1 !== freeDomain.indexOf('*')) {
-                return wildcardToRegExp(freeDomain).test(email);
+                return wildcardToRegExp(freeDomain).test(emailDomain);
             }
-            return email.split('@')[1] === freeDomain;
+            return emailDomain === freeDomain;
         });
     }
 
