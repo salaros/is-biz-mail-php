@@ -10,7 +10,6 @@ clean:
 
 prepare:
 	@mkdir -pv ./build
-	@composer install
 
 download: prepare
 	@wget -q http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf -O ./build/freemail_domains.cf
