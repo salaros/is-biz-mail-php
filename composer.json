@@ -2,7 +2,7 @@
     "name"              : "salaros/is-biz-mail",
     "license"           : "MIT",
     "description"       : "isBizMail tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not",
-    "homepage"          : "https://github.com/salaros/free-mailchecker",
+    "homepage"          : "https://github.com/salaros/is-biz-mail",
     "type"              : "library",
     "keywords": [
         "email",
