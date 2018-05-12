@@ -19,4 +19,4 @@ download: prepare
 php: download
 	@sed '/$(ARRAY_START_COMMENT)/,/$(ARRAY_END_COMMENT)/{//!d}' -i ./src/php/FreeMailChecker.php
 	@sed '/free email providers start/ r ./build/freemail_domains.txt' -i ./src/php/FreeMailChecker.php
-	@./vendor/bin/php-cs-fixer fix --show-progress=estimating ./src/php/ --rules=array_indentation --cache-file=./build/.php_cs.cache
+	@sed 's/^"/                "/' -i ./src/php/FreeMailChecker.php
