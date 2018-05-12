@@ -55,6 +55,13 @@ $mailChecker->isValid('hello@gmail.com');   // false
 // ...
 ```
 
+## Testing: PHPUnit
+
+```bash
+composer install
+composer test   # or ./vendor/bin/phpunit
+```
+
 # JavaScript
 
 You can install **isBizMail** for JavaScript via your prefered dependency manager, e.g. Yarn
@@ -89,4 +96,18 @@ const isBizMail = require('is-biz-mail');
 let result = isBizMail.isFreeMailAddress(email);
 console.log([email, result]);   // (2) ["foo@acme.onmicrosoft.com", false]
 // ...
+```
+
+## Testing: Mocha + Should.js
+
+```bash
+yarn
+yarn test
+```
+
+or via NPM
+
+```bash
+npm install
+npm test    # or ./node_modules/.bin/mocha
 ```
