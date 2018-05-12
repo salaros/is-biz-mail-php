@@ -4,7 +4,7 @@ checks:
 
 filter:
     excluded_paths:
-        - "tests/"
+        - "test/"
     dependency_paths:
         - "vendor/"
         - "node_modules/"
@@ -32,7 +32,7 @@ build:
     tests:
         override:
             -
-                command: 'vendor/bin/phpunit --coverage-clover=tests/php/reports/clover.xml'
+                command: 'vendor/bin/phpunit --coverage-clover=test/php/reports/clover.xml'
                 coverage:
-                    file: 'tests/php/reports/clover.xml'
+                    file: 'test/php/reports/clover.xml'
                     format: 'clover'

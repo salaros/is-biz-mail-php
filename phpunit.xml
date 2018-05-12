@@ -1,6 +1,6 @@
 
 <phpunit
-    bootstrap="tests/php/bootstrap.php"
+    bootstrap="test/php/bootstrap.php"
 	backupGlobals="false"
 	colors="true"
 	convertErrorsToExceptions="true"
@@ -9,7 +9,7 @@
 	>
 	<testsuites>
 		<testsuite name="Tests">
-			<directory suffix="Test.php">./tests/php/</directory>
+			<directory suffix="Test.php">./test/php/</directory>
 		</testsuite>
 	</testsuites>
     <filter>
@@ -18,9 +18,9 @@
 		</whitelist>
 	</filter>
 	<logging>
-		<log type="coverage-clover" target="tests/php/reports/clover.xml"/>
-        <log type="coverage-html" target="tests/php/reports/coverage" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highLowerBound="70" />
-        <log type="testdox-text" target="tests/php/reports/executed.txt"/>
+		<log type="coverage-clover" target="test/php/reports/clover.xml"/>
+        <log type="coverage-html" target="test/php/reports/coverage" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highLowerBound="70" />
+        <log type="testdox-text" target="test/php/reports/executed.txt"/>
     </logging>
 </phpunit>
 

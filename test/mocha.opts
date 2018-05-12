@@ -1,2 +1,2 @@
-./tests/node/
+./test/node/
 --colors

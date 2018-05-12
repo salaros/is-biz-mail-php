@@ -6,5 +6,6 @@
     // Exclude files from File Explorer
     "files.exclude": {
         "**/vendor":            true,
+        "**/node_modules":      true,
     },
 }

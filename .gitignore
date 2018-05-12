@@ -4,7 +4,7 @@ build/
 # PHP stuff
 vendor/
 composer.lock
-tests/php/reports/
+test/php/reports/
 
 # NPM modules
 node_modules/
