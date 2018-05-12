@@ -31,7 +31,7 @@ build:
 
     project_setup:
         before:
-            - make php
+            - make all
 
     tests:
         override:
