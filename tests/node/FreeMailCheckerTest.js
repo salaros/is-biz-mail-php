@@ -1,7 +1,6 @@
-require('../../src/javascript/FreeMailChecker.js');
-
-var should = require('should'),
+let should = require('should'),
     assert = require('assert'),
+    FreeMailChecker = require('../../src/node/'),
     emailSamples = require('../emailSamples.json');
 
 describe('FreeMailChecker.isFreeMailAddress', function () {

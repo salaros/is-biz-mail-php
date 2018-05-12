@@ -23,8 +23,15 @@ php: download
 	@sed '/$(ARRAY_START_COMMENT)/ r ./build/freemail_domains.txt' -i ./src/php/FreeMailChecker.php
 	@sed 's/^"/                "/' -i ./src/php/FreeMailChecker.php
 
-javascript: download
-	@sed '/$(ARRAY_START_COMMENT)/,/$(ARRAY_END_COMMENT)/{//!d}' -i ./src/javascript/FreeMailChecker.js
+node: download
+	@sed '/$(ARRAY_START_COMMENT)/,/$(ARRAY_END_COMMENT)/{//!d}' -i ./src/node/index.js
 	@sed -e ':a' -e 'N' -e '$$!ba' -e 's/\n//g' ./build/freemail_domains.txt > ./build/freemail_domains.js
-	@echo "        $$(cat ./build/freemail_domains.js)" > ./build/freemail_domains.js
-	@sed '/$(ARRAY_START_COMMENT)/ r ./build/freemail_domains.js' -i ./src/javascript/FreeMailChecker.js
+	@echo "    $$(cat ./build/freemail_domains.js)" > ./build/freemail_domains.js
+	@sed '/$(ARRAY_START_COMMENT)/ r ./build/freemail_domains.js' -i ./src/node/index.js
+
+javascript: node
+	@sed '/(function(global){/,/})((/{//!d}' -i ./src/javascript/FreeMailChecker.js
+	@sed 's/^/    /' ./src/node/index.js > ./build/FreeMailChecker.js
+	@sed 's/^    $$//' -i ./build/FreeMailChecker.js
+	@sed '/(function(global){/r ./build/FreeMailChecker.js' -i ./src/javascript/FreeMailChecker.js
+	@sed 's/module.exports/global.FreeMailChecker/g' -i ./src/javascript/FreeMailChecker.js
