@@ -19,21 +19,22 @@ namespace Salaros.Email
 
         public static bool IsFreeMailAddress(string email)
         {
-            if (string.IsNullOrWhiteSpace(email) || -1 == email.IndexOf('@')) {
+            var domainParts = email?.ToLowerInvariant()?.Split(new[]{ '@' }, 2, StringSplitOptions.RemoveEmptyEntries);
+            var emailDomain = domainParts?.Last();
+            if (string.IsNullOrWhiteSpace(emailDomain))
+            {
                 throw new ArgumentException($"Please supply a valid email address: {nameof(email)}");
             }
 
-            var domainParts = email.ToLowerInvariant().Split(new char[]{ '@' }, 2, StringSplitOptions.RemoveEmptyEntries);
-            var domain = domainParts.Last();
             foreach (var freeDomain in GetFreeDomains()) {
                 if (-1 != freeDomain.IndexOf("*", StringComparison.InvariantCulture) &&
-                    Regex.IsMatch(domain, Regex.Escape(freeDomain).Replace("\\*", ".*")))
+                    Regex.IsMatch(emailDomain, Regex.Escape(freeDomain).Replace("\\*", ".*")))
                 {
                     return true;
                 }
 
                 
-                if (freeDomain.Equals(domain)) {
+                if (freeDomain.Equals(emailDomain)) {
                     return true;
                 }
             }

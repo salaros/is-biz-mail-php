@@ -51,18 +51,18 @@ class IsBizMail
     public function isFreeMailAddress($email)
     {
         $parts = explode("@", $email);
-        $domain = strtolower(end($parts));
+        $emailDomain = strtolower(end($parts));
 
-        if (empty($domain)) {
+        if (empty($emailDomain)) {
             throw new InvalidArgumentException("You have supplied an invalid email address");
         }
 
         foreach (self::$freeMailDomains as $freeDomain) {
-            if (false === stripos($freeDomain, '*') && $freeDomain === $domain) {
+            if (false === stripos($freeDomain, '*') && $freeDomain === $emailDomain) {
                 return true;
             }
 
-            if (fnmatch($freeDomain, $domain)) {
+            if (fnmatch($freeDomain, $emailDomain)) {
                 return true;
             }
         }
