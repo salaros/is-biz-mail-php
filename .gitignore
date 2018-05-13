@@ -6,8 +6,9 @@ vendor/
 composer.lock
 test/php/reports/
 
-# NPM modules
+# JavaScript
 node_modules/
+package-lock\.json
 
 # .NET
 src/dotnet/bin
@@ -15,3 +16,5 @@ src/dotnet/obj
 test/dotnet/bin
 test/dotnet/obj
 \.vs/
+
+
