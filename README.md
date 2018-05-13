@@ -83,7 +83,7 @@ One of examples of vanilla JavaScript usage might be a simple HTML page:
 <script src="path/to/src/javascript/is-biz-mail.js"></script>
 <script>
     var result = isBizMail.isValid(email);
-    console.log([email, result]);   // (2) ["foo@acme.onmicrosoft.com", false]
+    console.log([email, result]);   // (2) ["foo@nodejs.onmicrosoft.com", false]
 </script>
 ```
 
@@ -93,7 +93,7 @@ One of examples of vanilla JavaScript usage might be a simple HTML page:
 const isBizMail = require('is-biz-mail');
 
 let result = isBizMail.isFreeMailAddress(email);
-console.log([email, result]);   // (2) ["foo@acme.onmicrosoft.com", false]
+console.log([email, result]);   // (2) ["es6@live.com", true]
 // ...
 ```
 
