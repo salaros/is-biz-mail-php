@@ -48,9 +48,8 @@ require 'path/to/vendor/autoload.php';
 
 use Salaros\Email\IsBizMail;
 
-$mailChecker = new IsBizMail();
-$mailChecker->isValid('foo@bar.com');       // true
-$mailChecker->isValid('hello@gmail.com');   // false
+(new IsBizMail())->isValid('foo@bar.com');      // true
+IsBizMail::isValid('hello@gmail.com');          // false
 
 // ...
 ```

@@ -9,8 +9,6 @@
  * @link     https://github.com/salaros/free-mailchecker
  */
 
-declare(strict_types=1);
-
 namespace Salaros\Email;
 
 use Salaros\Email\IsBizMail;
@@ -31,8 +29,7 @@ final class IsBizMailTest extends TestCase
      */
     public function hasFreeDomainsListPopulated()
     {
-        $obj = new IsBizMail();
-        $this->assertNotEmpty($obj->getFreeDomains());
+        $this->assertNotEmpty((new IsBizMail())->getFreeDomains());
     }
 
     /**
@@ -48,8 +45,7 @@ final class IsBizMailTest extends TestCase
      */
     public function emailAddressIsOnFreeDomain($freeEmail)
     {
-        $obj = new IsBizMail();
-        $this->assertSame(true, $obj->isFreeMailAddress($freeEmail));
+        $this->assertSame(true, (new IsBizMail())->isFreeMailAddress($freeEmail));
     }
 
     /**
@@ -65,8 +61,7 @@ final class IsBizMailTest extends TestCase
      */
     public function emailAddressIsOnBusinessDomain($businessEmail)
     {
-        $obj = new IsBizMail();
-        $this->assertSame(false, $obj->isFreeMailAddress($businessEmail));
+        $this->assertSame(false, (new IsBizMail())->isFreeMailAddress($businessEmail));
     }
 
     /**
@@ -83,8 +78,7 @@ final class IsBizMailTest extends TestCase
      */
     public function emailAddressIsValid($businessEmail)
     {
-        $obj = new IsBizMail();
-        $this->assertSame(true, $obj->isValid($businessEmail));
+        $this->assertSame(true, (new IsBizMail())->isValid($businessEmail));
     }
 
     /**

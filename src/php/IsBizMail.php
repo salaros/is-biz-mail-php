@@ -32,8 +32,13 @@ class IsBizMail
      */
     public function isValid($email)
     {
-        return false !== filter_var($email, FILTER_VALIDATE_EMAIL) &&
-              !$this->isFreeMailAddress($email);
+        if (false === filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
+
+        return (isset($this) && $this instanceof self)
+            ? !$this->isFreeMailAddress($email)
+            : !self::isFreeMailAddress($email);
     }
 
     /**
@@ -45,10 +50,14 @@ class IsBizMail
      */
     public function isFreeMailAddress($email)
     {
-        $email = strtolower($email);
         $parts = explode("@", $email);
-        $domain = end($parts);
-        foreach ($this->getFreeDomains() as $freeDomain) {
+        $domain = strtolower(end($parts));
+
+        if (empty($domain)) {
+            throw new InvalidArgumentException("You have supplied an invalid email address");
+        }
+
+        foreach (self::$freeMailDomains as $freeDomain) {
             if (false === stripos($freeDomain, '*') && $freeDomain === $domain) {
                 return true;
             }
