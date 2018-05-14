@@ -1,7 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
 using Xunit;
+using System.Reflection;
 
 namespace Salaros.Email.Test
 {
@@ -39,11 +38,7 @@ namespace Salaros.Email.Test
 
         static IsBizMailTest()
         {
-            var sampleEmailsPath = Environment.CurrentDirectory;
-            do
-            {
-                sampleEmailsPath = Directory.GetParent(sampleEmailsPath).FullName;
-            } while (!sampleEmailsPath.EndsWith("test"));
+            var sampleEmailsPath = Directory.GetParent(Assembly.GetExecutingAssembly().Location).FullName;
             sampleEmailsPath = Path.Combine(sampleEmailsPath, "emailSamples.json");
             var sampleEmailsRaw = File.ReadAllText(sampleEmailsPath);
             EmailSamples = Newtonsoft.Json.JsonConvert.DeserializeObject<EmailSamples>(sampleEmailsRaw);
