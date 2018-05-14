@@ -1,8 +1,34 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <RootNamespace>Salaros.Email</RootNamespace>
+    <Description>IsBizMail tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not</Description>
+    <Product>Salaros.Email.IsBizMail</Product>
+    <AssemblyName>Salaros.Email.IsBizMail</AssemblyName>
+    <PackageId>Salaros.Email.IsBizMail</PackageId>
+    <Version>0.2.2</Version>
+    <AssemblyVersion>0.2.2</AssemblyVersion>
+    <FileVersion>0.2.2</FileVersion>
+    <Company>Salaros</Company>
+    <Authors>Zhmayev Yaroslav aka Salaros</Authors>
+    <Copyright>Copyright 2018 (c) Salaros</Copyright>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageTags>email, address, checker, free, domain, blacklist</PackageTags>
+    <PackageLicenseUrl>https://github.com/salaros/is-biz-mail/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/salaros/is-biz-mail</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/salaros/is-biz-mail</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\build\dotnet\bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\build\dotnet\bin\Release\</OutputPath>
   </PropertyGroup>
 
 </Project>

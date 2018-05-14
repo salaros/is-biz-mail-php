@@ -49,7 +49,6 @@ namespace Salaros.Email
                     return true;
                 }
 
-                
                 if (freeDomain.Equals(emailDomain)) {
                     return true;
                 }
