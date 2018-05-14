@@ -110,3 +110,32 @@ or via NPM
 npm install
 npm test    # or ./node_modules/.bin/mocha
 ```
+
+# .NET Framework
+
+You can install IsBizMail for .NET (Core 2.0, Framework 4.6.1+, Mono 5.4 etc) via [NuGet](https://www.nuget.org/packages/Salaros.Email.IsBizMail/).
+
+You could build it from sources via:
+
+```bash
+dotnet build
+```
+
+IsBizMail in .NET is a static class, so can use it like this:
+
+```cs
+using Salaros.Email;
+
+//..
+{
+    Console.WriteLine(IsBizMail.IsValid("foo@bar.com"));        // true
+    Console.WriteLine(IsBizMail.IsValid("hello@gmail.com"));    // false
+//..
+
+```
+
+## Testing: xUnit.net
+
+```bash
+dotnet test test/dotnet
+```
