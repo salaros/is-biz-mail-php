@@ -5,7 +5,10 @@
 
     // Exclude files from File Explorer
     "files.exclude": {
-        "**/vendor":            true,
-        "**/node_modules":      true,
+        ".vs":              true,
+        "vendor":           true,
+        "src/dotnet/obj":   true,
+        "test/dotnet/obj":  true,
+        "node_modules":     true,
     },
 }
