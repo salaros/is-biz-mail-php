@@ -8,6 +8,14 @@ namespace Salaros.Email
     {
         private static readonly string[] FreeMailDomains;
 
+        /// <summary>
+        /// Returns true if email is valid business email address.
+        /// </summary>
+        /// <param name="email">The email address to validate.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified email is valid; otherwise, <c>false</c>.
+        /// </returns>
+        /// <exception cref="ArgumentException">email</exception>
         public static bool IsValid(string email)
         {
             if (string.IsNullOrWhiteSpace(email) || -1 == email.IndexOf('@')) {
@@ -17,6 +25,14 @@ namespace Salaros.Email
             return (IsValidEmail.IsMatch(email)) && !IsFreeMailAddress(email);
         }
 
+        /// <summary>
+        /// Determines whether the specified email is a free email address.
+        /// </summary>
+        /// <param name="email">The email address.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified email is a free email address; otherwise, <c>false</c>.
+        /// </returns>
+        /// <exception cref="ArgumentException">email</exception>
         public static bool IsFreeMailAddress(string email)
         {
             var domainParts = email?.ToLowerInvariant()?.Split(new[]{ '@' }, 2, StringSplitOptions.RemoveEmptyEntries);
@@ -42,7 +58,10 @@ namespace Salaros.Email
             return false;
         }
 
-
+        /// <summary>
+        /// Gets the free domains.
+        /// </summary>
+        /// <returns>The list of known free domains</returns>
         public static string[] GetFreeDomains()
         {
             return FreeMailDomains;

@@ -10,7 +10,7 @@ namespace Salaros.Email.Test
         [Fact]
         public void IsValid()
         {
-            foreach (var businessEmail in EmailSamples.Business)
+            foreach (var businessEmail in EmailSamples.BusinessEmails)
             {
                 var isValid = IsBizMail.IsValid(businessEmail);
                 Assert.True(isValid, $"{businessEmail} is not free (business)");
@@ -21,7 +21,7 @@ namespace Salaros.Email.Test
         [Fact]
         public void IsFree()
         {
-            foreach (var freeEmail in EmailSamples.Free)
+            foreach (var freeEmail in EmailSamples.FreeEmails)
             {
                 var isFree = IsBizMail.IsFreeMailAddress(freeEmail);
                 Assert.True(isFree, $"{freeEmail} is free");
