@@ -52,5 +52,6 @@ dotnet: download
 	@sed '/$(DOMAINS_START)/ r $(DOMAINS_LIST)' -i $(DOTNET_SRC)
 	@sed 's/^"/                "/g' -i $(DOTNET_SRC)
 
-tag:
-	@sed 's/^    \"version\": .*$$/    "version": "$(GIT_TAG)",/g' -i ./package.json
+bump_version:
+	@sed 's/version\": .*$$/version": "$(GIT_TAG)",/g' -i ./package.json
+	@sed 's/Version>.*</Version>$(GIT_TAG)</g' -i ./src/dotnet/IsBizMail.csproj
