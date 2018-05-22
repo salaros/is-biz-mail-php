@@ -14,7 +14,7 @@ GIT_TAG			:= $(shell git describe --tags `git rev-list --tags --max-count=1`)
 
 .PHONY: all
 
-all: php javascript
+all: php javascript dotnet
 
 clean:
 	@find ./build -mindepth 1 -delete
