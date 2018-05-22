@@ -54,7 +54,7 @@ class IsBizMail
         $emailDomain = strtolower(end($parts));
 
         if (empty($emailDomain)) {
-            throw new InvalidArgumentException("You have supplied an invalid email address");
+            throw new \InvalidArgumentException("You have supplied an invalid email address");
         }
 
         foreach (self::$freeMailDomains as $freeDomain) {
