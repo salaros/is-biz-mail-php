@@ -14,7 +14,11 @@
         }
 
         return freeMailDomains.some(function(freeDomain) {
-            var emailDomain = email.split('@')[1];
+            var emailDomain = (email) ? email.split('@')[1] : false;
+            if (emailDomain === undefined || !(emailDomain)) {
+                throw "Please supply a valid email address";
+            }
+
             if (-1 !== freeDomain.indexOf('*')) {
                 return wildcardToRegExp(freeDomain).test(emailDomain);
             }
