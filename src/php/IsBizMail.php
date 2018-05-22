@@ -572,7 +572,9 @@ class IsBizMail
                 "5005.lv", "a.org.ua", "bmx.lv", "company.org.ua", "coolmail.ru", "dino.lv",
                 "eclub.lv", "e-mail.am", "fit.lv", "hacker.am", "human.lv", "iphon.biz",
                 "latchess.com", "loveis.lv", "lv-inter.net", "pookmail.com", "sexriga.lv",
-                "*.onmicrosoft.com"
+                "*.onmicrosoft.com",
+                "cloud.me", "icloud.com", "indamail.hu", "irj.hu", "mail.com", "qip.ru",
+                "zooglemail.com",
                 // free email providers end
             )
         );
