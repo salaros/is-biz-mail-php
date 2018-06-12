@@ -10,6 +10,8 @@ vendor
 node_modules
 src/php
 test/php
+src/dotnet
+test/dotnet
 
 # Dot files
 .git
@@ -19,9 +21,15 @@ test/php
 .gitattributes
 .npmignore
 
+# Visual Studio
+.vs
+.vscode
+*.sln
+global.json
+
 # Files
 composer.*
-phpunit.yml
+phpunit.xml
 Makefile
 README.md
 CHANGELOG.md
