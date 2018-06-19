@@ -8,7 +8,7 @@
         "mocha": "^5.1.1",
         "should": "^13.2.1"
     },
-    "main": "src/node",
+    "main": "src/commonjs",
     "scripts": {
         "test": " ./node_modules/mocha/bin/mocha"
     }

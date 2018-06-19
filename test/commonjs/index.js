@@ -1,6 +1,6 @@
 let should = require('should'),
     assert = require('assert'),
-    isBizMail = require('../../src/node/'),
+    isBizMail = require('../../src/commonjs/'),
     emailSamples = require('../emailSamples.json');
 
 describe('isBizMail.isFreeMailAddress', function () {

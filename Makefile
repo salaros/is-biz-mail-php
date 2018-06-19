@@ -3,7 +3,7 @@ DOMAINS_LIST_PLUS	:= ./src/not-found-in-spamassassin-list.txt
 DOMAINS_START		:= free email providers start
 DOMAINS_END			:= free email providers end
 
-NODE_SRC		:= ./src/node/index.js
+COMMON_JS_SRC		:= ./src/commonjs/index.js
 PHP_SRC			:= ./src/php/IsBizMail.php
 DOTNET_SRC		:= ./src/dotnet/IsBizMail.cs
 JS_SRC 			:= ./src/javascript/is-biz-mail.js
@@ -38,15 +38,15 @@ php: download
 	@sed '/$(DOMAINS_START)/ r $(DOMAINS_LIST)' -i $(PHP_SRC)
 	@sed 's/^"/                "/' -i $(PHP_SRC)
 
-node: download
-	@sed '/$(DOMAINS_START)/,/$(DOMAINS_END)/{//!d}' -i $(NODE_SRC)
+commonjs: download
+	@sed '/$(DOMAINS_START)/,/$(DOMAINS_END)/{//!d}' -i $(COMMON_JS_SRC)
 	@sed -e ':a' -e 'N' -e '$$!ba' -e 's/\n//g' $(DOMAINS_LIST) > $(JS_TEMP_SRC)
 	@echo "    $$(cat $(JS_TEMP_SRC))" > $(JS_TEMP_SRC)
-	@sed '/$(DOMAINS_START)/ r $(JS_TEMP_SRC)' -i $(NODE_SRC)
+	@sed '/$(DOMAINS_START)/ r $(JS_TEMP_SRC)' -i $(COMMON_JS_SRC)
 
-javascript: node
+javascript: commonjs
 	@sed '/$(JS_CLOSURE)/,/$(JS_CLOSURE_END)/{//!d}' -i $(JS_SRC)
-	@sed 's/^/    /' $(NODE_SRC) > $(JS_TEMP_SRC)
+	@sed 's/^/    /' $(COMMON_JS_SRC) > $(JS_TEMP_SRC)
 	@sed 's/^    $$//' -i $(JS_TEMP_SRC)
 	@sed '/$(JS_CLOSURE)/r $(JS_TEMP_SRC)' -i $(JS_SRC)
 	@sed 's/module.exports/global.isBizMail/g' -i $(JS_SRC)
