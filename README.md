@@ -1,10 +1,9 @@
 Business Email Checker
-=========================
-
 [![License](https://poser.pugx.org/salaros/is-biz-mail/license)](https://packagist.org/packages/salaros/is-biz-mail)
 ![GitHub tag](https://img.shields.io/github/tag/salaros/is-biz-mail.svg)
 ![GitHub language count](https://img.shields.io/github/languages/count/salaros/is-biz-mail.svg)
 ![GitHub issues](https://img.shields.io/github/issues/salaros/is-biz-mail.svg)
+===============================================================================
 
 **isBizMail** tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not.
 The list of emails used by **isBizMail** is taken from [here](http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf)¹.
@@ -12,12 +11,12 @@ Detects around 2500 domains and subdomains.
 
 1) *All credits for the list itself go to [SpamAssasin](https://spamassassin.apache.org/) authors and contributors*
 
-# PHP
-
+PHP
 ![PHP version](https://img.shields.io/badge/PHP%20version-5.4.+%20|%207.0+-blue.svg)
 [![Latest Stable Version](https://poser.pugx.org/salaros/is-biz-mail/version)](https://packagist.org/packages/salaros/is-biz-mail)
 [![Total Downloads](https://poser.pugx.org/salaros/is-biz-mail/downloads)](https://packagist.org/packages/salaros/is-biz-mail)
 [![composer.lock available](https://poser.pugx.org/salaros/is-biz-mail/composerlock)](https://packagist.org/packages/salaros/is-biz-mail)
+===============================================================================
 
 [![Build Status](https://scrutinizer-ci.com/g/salaros/is-biz-mail/badges/build.png?b=master)](https://scrutinizer-ci.com/g/salaros/is-biz-mail/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salaros/is-biz-mail/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salaros/is-biz-mail/?branch=master)
@@ -54,14 +53,20 @@ IsBizMail::isValid('hello@gmail.com');          // false
 // ...
 ```
 
-## Testing: PHPUnit
+## Testing: [PHPUnit](https://phpunit.de/)
 
 ```bash
 composer install
 composer test   # or ./vendor/bin/phpunit
 ```
 
-# JavaScript
+JavaScript
+![js type](https://img.shields.io/badge/type-Vanilla%20|%20CommonJS-589594.svg)
+[![npm](https://img.shields.io/npm/v/is-biz-mail.svg)](https://www.npmjs.com/package/is-biz-mail)
+![npm](https://img.shields.io/npm/dt/is-biz-mail.svg)
+![npm](https://img.shields.io/npm/dw/is-biz-mail.svg)
+![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/is-biz-mail.svg)
+===============================================================================
 
 You can install **isBizMail** for JavaScript via your prefered dependency manager, e.g. Yarn
 
@@ -87,7 +92,7 @@ One of examples of vanilla JavaScript usage might be a simple HTML page:
 </script>
 ```
 
-## ES6 module, Node.js etc
+## [CommonJS](http://requirejs.org/docs/commonjs.html) / ES5 / ES6 module, Node.js etc
 
 ```js
 const isBizMail = require('is-biz-mail');
@@ -97,7 +102,7 @@ console.log([email, result]);   // (2) ["es6@live.com", true]
 // ...
 ```
 
-## Testing: Mocha + Should.js
+## Testing: [Mocha](https://mochajs.org/) + [Should.js](https://shouldjs.github.io/)
 
 ```bash
 yarn
@@ -111,9 +116,13 @@ npm install
 npm test    # or ./node_modules/.bin/mocha
 ```
 
-# .NET Framework
+.NET Framework
+[![NuGet](https://img.shields.io/nuget/v/Salaros.Email.IsBizMail.svg?label=NuGet&colorA=404680&colorB=98976B)](https://www.nuget.org/packages/Salaros.Email.IsBizMail)
+[![NuGet](https://img.shields.io/nuget/dt/Salaros.Email.IsBizMail.svg)](https://www.nuget.org/packages/Salaros.Email.IsBizMail)
+[![.NET Standard](https://img.shields.io/badge/.NET%20Standard-2.0+-784877.svg)](https://docs.microsoft.com/en-us/dotnet/standard/net-standard#net-implementation-support)
+===============================================================================
 
-You can install IsBizMail for .NET (Core 2.0, Framework 4.6.1+, Mono 5.4 etc) via [NuGet](https://www.nuget.org/packages/Salaros.Email.IsBizMail/).
+You can install IsBizMail for .NET Core 2.0+ / Framework 4.6.1+, Mono 5.4 etc via [NuGet](https://www.nuget.org/packages/Salaros.Email.IsBizMail/).
 
 You could build it from sources via:
 
