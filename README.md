@@ -48,9 +48,29 @@ require 'path/to/vendor/autoload.php';
 use Salaros\Email\IsBizMail;
 
 (new IsBizMail())->isValid('foo@bar.com');      // true
-IsBizMail::isValid('hello@gmail.com');          // false
 
+// You can use static access as well
+IsBizMail::isValid('hello@gmail.com');          // false
 // ...
+```
+
+You can easily drop it into your [Yii2 model](https://www.yiiframework.com/doc/guide/2.0/en/input-validation#declaring-rules)'s rules:
+
+```php
+public function rules() {
+  return [
+    // ...
+    [['email'], 'isBusinessEmail'],
+    // ...
+  ];
+}
+
+public function isBusinessEmail($attributeName, $params) {
+  $isBussiness = (new IsBizMail())->isValid($this->email);
+  if (!isBussiness)
+    $this->addError($attributeName, 'Mail boxes such as @gmail.com, @yahoo.com etc are not allowed!');
+  return $isBussiness;
+}
 ```
 
 ## Testing: [PHPUnit](https://phpunit.de/)
