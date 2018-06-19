@@ -9,9 +9,9 @@
     <Product>Salaros.Email.IsBizMail</Product>
     <AssemblyName>Salaros.Email.IsBizMail</AssemblyName>
     <PackageId>Salaros.Email.IsBizMail</PackageId>
-    <Version>0.2.3</Version>
-    <AssemblyVersion>0.2.3</AssemblyVersion>
-    <FileVersion>0.2.3</FileVersion>
+    <Version>0.2.7</Version>
+    <AssemblyVersion>0.2.7</AssemblyVersion>
+    <FileVersion>0.2.7</FileVersion>
     <Company>Salaros</Company>
     <Authors>Zhmayev Yaroslav aka Salaros</Authors>
     <Copyright>Copyright 2018 (c) Salaros</Copyright>

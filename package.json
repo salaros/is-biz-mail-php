@@ -1,6 +1,6 @@
 {
     "name": "is-biz-mail",
-    "version": "0.2.6",
+    "version": "0.2.7",
     "license": "MIT",
     "description": "isBizMail tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not",
     "homepage": "https://github.com/salaros/is-biz-mail",
