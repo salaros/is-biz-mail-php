@@ -136,13 +136,13 @@ npm install
 npm test    # or ./node_modules/.bin/mocha
 ```
 
-.NET Framework
+dotnet (.NET)
 [![NuGet](https://img.shields.io/nuget/v/Salaros.Email.IsBizMail.svg?label=NuGet&colorA=404680&colorB=98976B)](https://www.nuget.org/packages/Salaros.Email.IsBizMail)
 [![NuGet](https://img.shields.io/nuget/dt/Salaros.Email.IsBizMail.svg)](https://www.nuget.org/packages/Salaros.Email.IsBizMail)
 [![.NET Standard](https://img.shields.io/badge/.NET%20Standard-2.0+-784877.svg)](https://docs.microsoft.com/en-us/dotnet/standard/net-standard#net-implementation-support)
 ===============================================================================
 
-You can install IsBizMail for .NET Core 2.0+ / Framework 4.6.1+, Mono 5.4 etc via [NuGet](https://www.nuget.org/packages/Salaros.Email.IsBizMail/).
+You can install IsBizMail for **.NET Core 2.0+ / Framework 4.6.1+, Mono 5.4+** etc via [NuGet](https://www.nuget.org/packages/Salaros.Email.IsBizMail/).
 
 You could build it from sources via:
 
