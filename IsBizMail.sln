@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
 		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
@@ -14,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsBizMail", "src\dotnet\IsBizMail.csproj", "{F8722C5D-2464-2454-5C38-51BD6511CD90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IsBizMail.Test", "test\dotnet\IsBizMail.Test.csproj", "{8A4D33FB-4592-4EC2-894F-B773BEAE305C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsBizMail.Test", "test\dotnet\IsBizMail.Test.csproj", "{8A4D33FB-4592-4EC2-894F-B773BEAE305C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
