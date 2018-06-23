@@ -16,12 +16,13 @@
     <Authors>Zhmayev Yaroslav aka Salaros</Authors>
     <Copyright>Copyright 2018 (c) Salaros</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageTags>email, address, checker, free, domain, blacklist</PackageTags>
+    <PackageTags>email,checker,address,free,domain,business,business-email,blacklist,php,javascript,commonjs,mail,mailbox</PackageTags>
     <PackageLicenseUrl>https://github.com/salaros/is-biz-mail/master/LICENSE.txt</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/salaros/is-biz-mail</PackageProjectUrl>
     <RepositoryUrl>https://github.com/salaros/is-biz-mail</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
+    <PackageIconUrl>https://raw.githubusercontent.com/salaros/is-biz-mail/master/assets/icon.png</PackageIconUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
