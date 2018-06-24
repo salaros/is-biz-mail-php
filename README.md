@@ -3,7 +3,7 @@ Business Email Checker
 ![GitHub tag](https://img.shields.io/github/tag/salaros/is-biz-mail.svg)
 ![GitHub language count](https://img.shields.io/github/languages/count/salaros/is-biz-mail.svg)
 ![GitHub issues](https://img.shields.io/github/issues/salaros/is-biz-mail.svg)
-===============================================================================
+================================================================================================
 
 **isBizMail** tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not.
 The list of emails used by **isBizMail** is taken from [here](http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf)¹.
@@ -16,11 +16,10 @@ PHP
 [![Latest Stable Version](https://poser.pugx.org/salaros/is-biz-mail/version)](https://packagist.org/packages/salaros/is-biz-mail)
 [![Total Downloads](https://poser.pugx.org/salaros/is-biz-mail/downloads)](https://packagist.org/packages/salaros/is-biz-mail)
 [![composer.lock available](https://poser.pugx.org/salaros/is-biz-mail/composerlock)](https://packagist.org/packages/salaros/is-biz-mail)
-===============================================================================
-
-[![Build Status](https://scrutinizer-ci.com/g/salaros/is-biz-mail/badges/build.png?b=master)](https://scrutinizer-ci.com/g/salaros/is-biz-mail/build-status/master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salaros/is-biz-mail/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salaros/is-biz-mail/?branch=master)
+================================================================================================
+[![Travis CI build Status](https://travis-ci.org/salaros/is-biz-mail.svg?branch=master)](https://travis-ci.org/salaros/is-biz-mail)
 [![Code Coverage](https://scrutinizer-ci.com/g/salaros/is-biz-mail/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/salaros/is-biz-mail/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salaros/is-biz-mail/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salaros/is-biz-mail/?branch=master)
 
 You can install **isBizMail** via Composer:
 
@@ -86,7 +85,8 @@ JavaScript
 ![npm](https://img.shields.io/npm/dt/is-biz-mail.svg)
 ![npm](https://img.shields.io/npm/dw/is-biz-mail.svg)
 ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/is-biz-mail.svg)
-===============================================================================
+================================================================================================
+[![Travis CI build Status](https://travis-ci.org/salaros/is-biz-mail.svg?branch=master)](https://travis-ci.org/salaros/is-biz-mail)
 
 You can install **isBizMail** for JavaScript via your prefered dependency manager, e.g. Yarn
 
@@ -140,7 +140,7 @@ dotnet (.NET)
 [![NuGet](https://img.shields.io/nuget/v/Salaros.Email.IsBizMail.svg?label=NuGet&colorA=404680&colorB=98976B)](https://www.nuget.org/packages/Salaros.Email.IsBizMail)
 [![NuGet](https://img.shields.io/nuget/dt/Salaros.Email.IsBizMail.svg)](https://www.nuget.org/packages/Salaros.Email.IsBizMail)
 [![.NET Standard](https://img.shields.io/badge/.NET%20Standard-2.0+-784877.svg)](https://docs.microsoft.com/en-us/dotnet/standard/net-standard#net-implementation-support)
-===============================================================================
+================================================================================================
 
 You can install IsBizMail for **.NET Core 2.0+ / Framework 4.6.1+, Mono 5.4+** etc via [NuGet](https://www.nuget.org/packages/Salaros.Email.IsBizMail/).
 
