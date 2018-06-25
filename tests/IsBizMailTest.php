@@ -90,7 +90,7 @@ final class IsBizMailTest extends TestCase
      */
     public function getFreeMailDomainSamples()
     {
-        $emailSamples = file_get_contents(sprintf("%s/emailSamples.json", dirname(__DIR__)));
+        $emailSamples = file_get_contents(sprintf("%s/assets/emailSamples.json", dirname(__DIR__)));
         $emailSamples = json_decode($emailSamples, false);
         return array_map(function ($freeEmail) {
             return array($freeEmail);
@@ -106,7 +106,7 @@ final class IsBizMailTest extends TestCase
      */
     public function getBusinessMailDomainSamples()
     {
-        $emailSamples = file_get_contents(sprintf("%s/emailSamples.json", dirname(__DIR__)));
+        $emailSamples = file_get_contents(sprintf("%s/assets/emailSamples.json", dirname(__DIR__)));
         $emailSamples = json_decode($emailSamples, false);
         return array_map(function ($businessEmail) {
             return array($businessEmail);
