@@ -1,23 +1,17 @@
 env:
   global:
   - COVERALLS_RUN_LOCALLY=1
-  - secure: pLeHhq2RqO8qEAfhY7OHlgfIxuEj414qIviYBpzZ3/nUangjhCvNT2/EfojCeVJaujoWYrM80PmZAk6hIZz6uMUE4ufK536mLB0X1cL/KUBT3gbMGeQrSXrrEJPG1905gFLNNgfOcPygPJo6CkQnd66dYyfi+rmF5pZzKxM9B+u5nzCOnDuU9/EfPltlACGKkPM6qtMCpuuZB34WEpIv52/Gx2rsZXEeh/IlMm/EDOEZsy56MyG9MR3dILMzCwMECR5Ckp765gcv/l2LC6hYB+8RWSu0nqjL5zQi84nAAeyenby789NhnM21Xr1G52K4HwBUbLxkIwE1x/QCPmjbOfTjuANVijFnGee9CVIqcWB/ShOWKzaI8sHmMHOtQML3LYE/lMVqBovmv2tdjK4EuQX3iDYAktug23IpQ/BEJDLwIeivqRqKdJH9yCNjQY4yEtmIRXpw8fVLImHXbGXsqBw3jX7XBFyTZKSrNwCbSFZPw4e7ge9BIzSApX80hl9oq8CS3Zcuj+oEo7KqqKBHttlvvEwcHoplfUZ2279uW2CMl/utF2WEoLCoPM3VjtUXWsHURXM3qm5hAOwwz2gMXgmUQNZQdckf3noj591mPoGqwV6CuFPf5Oah9oneVW2W9XoTDR7txXVR07mr41a/akLgODQn0eincaVA8+jyNlg=
-
+  - secure: RxkOjtshgBFxiDwMMt25YSuZu3M275osipCcJUeQkHiJxgBTB2VugCAeN5zsWEek6PwYR3NzfBs67Ag85LY7183SoE60AK/NFsqdDyei8R9kp5GoXmF7GZ4sOkfPsptX/QBr8+zV/OxdIvNxDepieQCvMxbpMcDo+FLyO001QkcD8ExXCWOk7Mouyx4zkd2sRiTFYmXcZM3C41YZ76s/ivchidbiH875dUUpVe4BYACbhJG+Uev8xeTiUZqTWJYLwJhxhiILXuPBXDW9YlOz8yZNi4iKqe0Y4sGR8DAk8hygeXBm2ydIOTnhaak4ihYF7vytmKQyPPaIN4v8oWlbgbboiBuYW+Aa25wEaq1I4kqt0I9OVSmgSRXYluuRqH8A7F+/QrBKiIT6TyCYll7t9sKgQUxBkVnDNXtyj87rMTzbyiTc33/uG/NRvtULNSacY5qqyBXAP2WQc5LK5mQkkoEencJn2feZEjcCbM1Q9brRP2HVh+S5i5OtRQgwMkSJi6oFb4IJzE9i6vyvnXvZCtbWs6P1y7gi74ZNmc2ihf5WrLxEvcDqPYZ7r2GRhzo+QmNXxI4qE7MIFsvxRszKuKjJJeBE6dTQzy6PO3j5Kxm04WC4mXPVIQpG5AP/JcfEfrB7a6JMRuqE/yqKKtIAwFKHJbw268CwAEKvRYIrwns=
 language: php
-
 php:
-  - '5.4'
-  - '7.0'
-
+- '5.4'
+- '7.0'
 before_script:
-  - composer install --dev --no-interaction
-
+- composer install --dev --no-interaction
 cache:
   directories:
-    - vendor
-
+  - vendor
 script:
-  - composer test
-
+- composer test
 after_success:
-  - travis_retry omposer coverage
+- travis_retry composer coverage
