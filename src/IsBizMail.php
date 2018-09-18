@@ -99,8 +99,7 @@ class IsBizMail
     public static function init()
     {
         // phpcs:disable Generic.Files.LineLength
-        self::$freeMailDomains = array_unique(
-            array(
+        self::$freeMailDomains = array(
                 // free email providers start
                 "020.co.uk", "123.com", "123box.net", "123india.com", "123mail.cl",
                 "123mail.org", "123qwe.co.uk", "138mail.com", "141.ro", "150mail.com", "150ml.com", "16mail.com",
@@ -584,7 +583,6 @@ class IsBizMail
                 "cloud.me", "icloud.com", "indamail.hu", "irj.hu", "mail.com", "qip.ru",
                 "zooglemail.com",
                 // free email providers end
-            )
         );
     }
 }
