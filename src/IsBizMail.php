@@ -57,6 +57,10 @@ class IsBizMail
             throw new \InvalidArgumentException("You have supplied an invalid email address");
         }
 
+        if (null === self::$freeMailDomains) {
+            self::init();
+        }
+
         foreach (self::$freeMailDomains as $freeDomain) {
             if (false === stripos($freeDomain, '*') && $freeDomain === $emailDomain) {
                 return true;
@@ -76,6 +80,10 @@ class IsBizMail
      */
     public function getFreeDomains()
     {
+        if (null === self::$freeMailDomains) {
+            self::init();
+        }
+
         return self::$freeMailDomains;
     }
 
@@ -580,6 +588,3 @@ class IsBizMail
         );
     }
 }
-
-// phpcs:disable PSR1.Files.SideEffects
-IsBizMail::init();
