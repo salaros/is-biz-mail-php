@@ -9,6 +9,10 @@ Business Email Checker
 [![Total Downloads](https://poser.pugx.org/salaros/is-biz-mail/downloads)](https://packagist.org/packages/salaros/is-biz-mail)
 [![composer.lock available](https://poser.pugx.org/salaros/is-biz-mail/composerlock)](https://packagist.org/packages/salaros/is-biz-mail)
 
+[![Donate Patreon](https://img.shields.io/badge/donate-Patreon-f96854.svg)](https://www.patreon.com/salaros/)
+[![Donate Paypal](https://img.shields.io/badge/donate-PayPal-009cde.svg)](https://paypal.me/salarosIT)
+[![Donate Liberapay](https://img.shields.io/badge/donate-Liberapay-ffc600.svg)](https://liberapay.com/salaros/)
+
 **isBizMail** tells you whether a given email address is free (gmail.com, yahoo.es, yandex.ru etc) or not.
 The list of emails used by **isBizMail** is taken from [here](http://svn.apache.org/repos/asf/spamassassin/trunk/rules/20_freemail_domains.cf)¹.
 Detects around 2500 domains and subdomains.
