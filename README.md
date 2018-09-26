@@ -19,6 +19,11 @@ Detects around 2500 domains and subdomains.
 
 1) *All credits for the list itself go to [SpamAssasin](https://spamassassin.apache.org/) authors and contributors*
 
+## Looking for JavaScript, .NET etc?
+
+* [JavaScript implementation](https://github.com/salaros/is-biz-mail-js) (Vanilla / CommomJS module)
+* [.NET implementation](https://github.com/salaros/is-biz-mail-dotnet) (.NET Standard 2.0+)
+
 ## Installation
 
 You can install **isBizMail** via Composer:
