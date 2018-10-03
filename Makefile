@@ -34,3 +34,7 @@ php: download
 
 tests:
 	@composer test
+
+validate-extra: download
+	@# Make sure that email in the additional list have no duplicates in SpamAssasin lists
+	@while read p; do if [ ! -z "$$(grep -in " $${p}" $(DOMAINS_LIST).tmp)" ]; then echo $$p; fi; done <$(DOMAINS_LIST_PLUS)
