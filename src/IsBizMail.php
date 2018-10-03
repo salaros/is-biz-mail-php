@@ -62,11 +62,13 @@ class IsBizMail
         }
 
         foreach (self::$freeMailDomains as $freeDomain) {
-            if (false === stripos($freeDomain, '*') && $freeDomain === $emailDomain) {
+            $isPattern = false !== stripos($freeDomain, '*');
+
+            if (!$isPattern && $freeDomain === $emailDomain) {
                 return true;
             }
 
-            if (fnmatch($freeDomain, $emailDomain)) {
+            if ($isPattern && fnmatch($freeDomain, $emailDomain)) {
                 return true;
             }
         }
