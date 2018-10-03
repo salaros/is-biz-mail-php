@@ -533,7 +533,12 @@ class IsBizMail
             "techie.com", "technologist.com", "theplate.com", "therapist.net", "toke.com", "toothfairy.com",
             "torontomail.com", "tvstar.com", "umpire.com", "usa.com", "uymail.com", "webname.com",
             "worker.com", "workmail.com", "writeme.com", "cloud.me", "indamail.hu", "irj.hu",
-            "qip.ru", "zooglemail.com",
+            "qip.ru", "zooglemail.com", "a.ua", "fm.com.ua", "ua.fm", "inet.ua",
+            "meta.ua", "bk.ru", "list.ru", "borda.ru", "fromru.com", "front.ru",
+            "hotmail.ru", "krovatka.su", "nm.ru", "5ballov.ru", "aeterna.ru", "ziza.ru",
+            "memori.ru", "photofile.ru", "fotoplenka.ru", "pochta.com", "webmail.ru", "email.ru",
+            "fax.ru", "aport.ru", "omen.ru", "atrus.ru", "aport2000.ru", "nm.ru",
+            "tut.by",
             // free email providers end
         );
     }
