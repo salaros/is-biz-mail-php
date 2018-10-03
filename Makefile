@@ -29,7 +29,7 @@ download: prepare
 php: download
 	@sed '/$(DOMAINS_START)/,/$(DOMAINS_END)/{//!d}' -i $(PHP_SRC)
 	@sed '/$(DOMAINS_START)/ r $(DOMAINS_LIST)' -i $(PHP_SRC)
-	@sed 's/^"/                "/' -i $(PHP_SRC)
+	@sed 's/^"/            "/' -i $(PHP_SRC)
 
 tests:
 	@composer test
