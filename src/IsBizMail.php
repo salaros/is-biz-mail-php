@@ -54,8 +54,8 @@ class IsBizMail
         $parts = explode("@", $email);
         $emailDomain = strtolower(end($parts));
 
-        if (empty($emailDomain)) {
-            throw new \InvalidArgumentException("You have supplied an invalid email address");
+        if (2 !== count($parts) || empty($emailDomain)) {
+            throw new \InvalidArgumentException("You have supplied an invalid email address", 100);
         }
 
         if (false !== stripos($emailDomain, '*')) {
@@ -63,7 +63,8 @@ class IsBizMail
                 sprintf(
                     "Domain part of the the following email contains a wildcard, which is not allowed: '%s'",
                     $email
-                )
+                ),
+                200
             );
         }
 

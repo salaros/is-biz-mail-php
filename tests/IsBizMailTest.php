@@ -112,6 +112,52 @@ final class IsBizMailTest extends TestCase
     }
 
     /**
+     * Tests IsBizMail->isValid() against some invalid emails
+     *
+     * @param string $invalidEmail An invalid email address
+     *
+     * @dataProvider          getInvalidEmailSamples
+     * @covers                ::isValid
+     * @test
+     *
+     * @return void
+     */
+    public function emailAddressIsInvalid($invalidEmail)
+    {
+        $this->assertSame(false, (new IsBizMail())->isValid($invalidEmail));
+    }
+
+    /**
+     * Tests IsBizMail->isFreeMailAddress() with email containing a wildcard
+     *
+     * @covers                ::isFreeMailAddress
+     * @expectedException     InvalidArgumentException
+     * @expectedExceptionCode 200
+     * @test
+     *
+     * @return void
+     */
+    public function testisFreeMailAddressException200()
+    {
+        (new IsBizMail())->isFreeMailAddress('invalid@wildcard.*');
+    }
+
+    /**
+     * Tests IsBizMail->isFreeMailAddress() against an invalid email
+     *
+     * @covers                ::isFreeMailAddress
+     * @expectedException     InvalidArgumentException
+     * @expectedExceptionCode 100
+     * @test
+     *
+     * @return void
+     */
+    public function testisFreeMailAddressException100()
+    {
+        (new IsBizMail())->isFreeMailAddress('notAnEmail');
+    }
+
+    /**
      * Provides a list of free email addresses
      * @doesNotPerformAssertions
      * @coversNothing
@@ -151,6 +197,20 @@ final class IsBizMailTest extends TestCase
         return array_map(function ($patternDomains) {
             return array($patternDomains);
         }, self::getEmailSamples()->pattern);
+    }
+
+    /**
+     * Provides a list of invalid email addresses
+     * @doesNotPerformAssertions
+     * @coversNothing
+     *
+     * @return array
+     */
+    public function getInvalidEmailSamples()
+    {
+        return array_map(function ($invalidEmails) {
+            return array($invalidEmails);
+        }, self::getEmailSamples()->invalid);
     }
 
     /**

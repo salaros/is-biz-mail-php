@@ -28,5 +28,12 @@
                 "free__@live.com",
                 "free__@hotmail.co.uk",
                 "free__@hotmail.ru"
+        ],
+
+        "invalid": [
+                "bad__@example.*",
+                "yandex.ru",
+                "bad__@-domain.com",
+                "bad__@domain"
         ]
 }
