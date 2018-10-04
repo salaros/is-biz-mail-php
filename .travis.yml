@@ -12,7 +12,7 @@ matrix:
   fast_finish: true
 
 before_script:
-- composer update --no-suggest --prefer-dist --no-interaction
+- composer install --no-suggest --prefer-dist --no-interaction
 
 cache:
   directories:
