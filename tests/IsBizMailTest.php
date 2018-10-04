@@ -20,6 +20,8 @@ use PHPUnit\Framework\TestCase;
  */
 final class IsBizMailTest extends TestCase
 {
+    private static $emailSamples;
+
     /**
      * Check if any free domain is defined
      * @covers      ::getFreeDomains
@@ -30,6 +32,18 @@ final class IsBizMailTest extends TestCase
     public function hasFreeDomainsListPopulated()
     {
         $this->assertNotEmpty((new IsBizMail())->getFreeDomains());
+    }
+
+    /**
+     * Check if any domain pattern is defined
+     * @covers      ::getFreeDomainPatterns
+     * @test
+     *
+     * @return void
+     */
+    public function hasFreeDomainsPatternsPopulated()
+    {
+        $this->assertNotEmpty((new IsBizMail())->getFreeDomainPatterns());
     }
 
     /**
@@ -65,6 +79,22 @@ final class IsBizMailTest extends TestCase
     }
 
     /**
+     * Tests IsBizMail->isFreeMailAddress() against some domain patterns
+     *
+     * @param string $freeEmail A free email address
+     *
+     * @dataProvider getDomainPatternSamples
+     * @covers      ::isFreeMailAddress
+     * @test
+     *
+     * @return void
+     */
+    public function emailMatchesDomainPattern($freeEmail)
+    {
+        $this->assertSame(true, (new IsBizMail())->isFreeMailAddress($freeEmail));
+    }
+
+    /**
      * Tests IsBizMail->isValid() against some business emails
      *
      * @param string $businessEmail A business email address
@@ -90,11 +120,9 @@ final class IsBizMailTest extends TestCase
      */
     public function getFreeMailDomainSamples()
     {
-        $emailSamples = file_get_contents(sprintf("%s/assets/emailSamples.json", dirname(__DIR__)));
-        $emailSamples = json_decode($emailSamples, false);
         return array_map(function ($freeEmail) {
             return array($freeEmail);
-        }, $emailSamples->free);
+        }, self::getEmailSamples()->free);
     }
 
     /**
@@ -106,10 +134,40 @@ final class IsBizMailTest extends TestCase
      */
     public function getBusinessMailDomainSamples()
     {
-        $emailSamples = file_get_contents(sprintf("%s/assets/emailSamples.json", dirname(__DIR__)));
-        $emailSamples = json_decode($emailSamples, false);
         return array_map(function ($businessEmail) {
             return array($businessEmail);
-        }, $emailSamples->business);
+        }, self::getEmailSamples()->business);
+    }
+
+    /**
+     * Provides a list of business email addresses
+     * @doesNotPerformAssertions
+     * @coversNothing
+     *
+     * @return array
+     */
+    public function getDomainPatternSamples()
+    {
+        return array_map(function ($patternDomains) {
+            return array($patternDomains);
+        }, self::getEmailSamples()->pattern);
+    }
+
+    /**
+     * Provides an object containing lists of sample free, business etc domains
+     * @doesNotPerformAssertions
+     * @coversNothing
+     *
+     * @return object
+     */
+    public static function getEmailSamples()
+    {
+        if (is_null(self::$emailSamples)) {
+           
+            self::$emailSamples = $emailSamples = json_decode(
+                file_get_contents(sprintf("%s/assets/emailSamples.json", dirname(__DIR__))),
+                false);
+        }
+        return self::$emailSamples;
     }
 }

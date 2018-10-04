@@ -8,9 +8,6 @@
         "free": [
                 "free__@gmail.com",
                 "free__@yahoo.it",
-                "free__@yandex.ru",
-                "free__@live.com",
-                "free__@acme.onmicrosoft.com",
                 "free__@cloud.me",
                 "free__@icloud.com",
                 "free__@qip.ru",
@@ -20,11 +17,16 @@
                 "free__@bk.ru",
                 "free__@email.com",
                 "free__@email.ru",
-                "free__@hotmail.com",
-                "free__@hotmail.ru",
                 "free__@meta.ua",
                 "free__@nm.ru",
-                "free__@rambler.ru",
-                "free__@yandex.ru"
+                "free__@rambler.ru"
+        ],
+
+        "pattern": [
+                "free__@acme.onmicrosoft.com",
+                "free__@yandex.ru",
+                "free__@live.com",
+                "free__@hotmail.co.uk",
+                "free__@hotmail.ru"
         ]
 }

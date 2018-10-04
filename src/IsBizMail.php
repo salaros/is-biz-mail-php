@@ -80,12 +80,13 @@ class IsBizMail
 
     /**
      * Gets the list of all known free mail box providers
-     *
+     * @codeCoverageIgnore
+     * 
      * @return array
      */
     public function getFreeDomains()
     {
-        if (null === self::$freeMailDomains) {
+        if (is_null(self::$freeMailDomains)) {
             self::init();
         }
 
@@ -94,12 +95,13 @@ class IsBizMail
 
     /**
      * Gets the list of wildcards matching some free mail box providers
-     *
+     * @codeCoverageIgnore
+     * 
      * @return array
      */
     public function getFreeDomainPatterns()
     {
-        if (null === self::$freeMailPatterns) {
+        if (is_null(self::$freeMailPatterns)) {
             self::init();
         }
 
