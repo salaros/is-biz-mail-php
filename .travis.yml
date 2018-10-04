@@ -1,17 +1,26 @@
-env:
-  global:
-  - COVERALLS_RUN_LOCALLY=1
-  - secure: RxkOjtshgBFxiDwMMt25YSuZu3M275osipCcJUeQkHiJxgBTB2VugCAeN5zsWEek6PwYR3NzfBs67Ag85LY7183SoE60AK/NFsqdDyei8R9kp5GoXmF7GZ4sOkfPsptX/QBr8+zV/OxdIvNxDepieQCvMxbpMcDo+FLyO001QkcD8ExXCWOk7Mouyx4zkd2sRiTFYmXcZM3C41YZ76s/ivchidbiH875dUUpVe4BYACbhJG+Uev8xeTiUZqTWJYLwJhxhiILXuPBXDW9YlOz8yZNi4iKqe0Y4sGR8DAk8hygeXBm2ydIOTnhaak4ihYF7vytmKQyPPaIN4v8oWlbgbboiBuYW+Aa25wEaq1I4kqt0I9OVSmgSRXYluuRqH8A7F+/QrBKiIT6TyCYll7t9sKgQUxBkVnDNXtyj87rMTzbyiTc33/uG/NRvtULNSacY5qqyBXAP2WQc5LK5mQkkoEencJn2feZEjcCbM1Q9brRP2HVh+S5i5OtRQgwMkSJi6oFb4IJzE9i6vyvnXvZCtbWs6P1y7gi74ZNmc2ihf5WrLxEvcDqPYZ7r2GRhzo+QmNXxI4qE7MIFsvxRszKuKjJJeBE6dTQzy6PO3j5Kxm04WC4mXPVIQpG5AP/JcfEfrB7a6JMRuqE/yqKKtIAwFKHJbw268CwAEKvRYIrwns=
+# Allows use container-based infrastructure
+sudo: false
+
+# Project language
 language: php
+ 
 php:
 - '5.4'
 - '7.0'
+
+matrix:
+  fast_finish: true
+
 before_script:
-- composer install --dev --no-interaction
+- composer update --no-suggest --prefer-dist --no-interaction
+
 cache:
   directories:
   - vendor
+
 script:
-- composer test
+  - composer test
+
 after_success:
-- travis_retry composer coverage
+  - test $TRAVIS_PHP_VERSION = "7.0" &&
+    travis_retry composer coverage
