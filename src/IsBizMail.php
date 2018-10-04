@@ -89,7 +89,7 @@ class IsBizMail
      *
      * @return array
      */
-    public function getFreeDomains()
+    public static function getFreeDomains()
     {
         if (is_null(self::$freeMailDomains)) {
             self::init();
@@ -104,7 +104,7 @@ class IsBizMail
      *
      * @return array
      */
-    public function getFreeDomainPatterns()
+    public static function getFreeDomainPatterns()
     {
         if (is_null(self::$freeMailPatterns)) {
             self::init();
