@@ -3,10 +3,10 @@ sudo: false
 
 # Project language
 language: php
- 
+
 php:
-- '5.4'
-- '7.0'
+  - "5.4"
+  - "7.0"
 
 matrix:
   fast_finish: true
@@ -21,11 +21,11 @@ before_install:
   - git submodule update --init --recursive
 
 before_script:
-- composer install --no-suggest --prefer-dist --no-interaction
+  - composer install --no-suggest --prefer-dist --no-interaction
 
 cache:
   directories:
-  - vendor
+    - $HOME/.cache/composer/files
 
 script:
   - composer test
