@@ -2,11 +2,6 @@ checks:
     php: true
     javascript: true
 
-before_commands:
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - cat .gitmodules
-  - git submodule update --init --recursive
-
 filter:
     excluded_paths:
         - "test/"
