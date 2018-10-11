@@ -1,5 +1,5 @@
 DOMAINS_LIST		:= ./build/freemail_domains.txt
-DOMAINS_LIST_PLUS	:= ./assets/not-found-in-spamassassin-list.txt
+DOMAINS_LIST_PLUS	:= ./assets/emails-not-in-spamassassin.txt
 DOMAINS_COMMENT		:= free email providers
 DOMAINSW_COMMENT	:= free email patterns
 PHP_SRC				:= ./src/IsBizMail.php

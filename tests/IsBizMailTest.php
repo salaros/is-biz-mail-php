@@ -224,7 +224,7 @@ final class IsBizMailTest extends TestCase
     {
         if (is_null(self::$emailSamples)) {
             self::$emailSamples = json_decode(
-                file_get_contents(sprintf("%s/assets/emailSamples.json", dirname(__DIR__))),
+                file_get_contents(sprintf("%s/assets/email-test-samples.json", dirname(__DIR__))),
                 false
             );
         }
