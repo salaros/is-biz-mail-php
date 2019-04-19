@@ -59,7 +59,7 @@ final class IsBizMailTest extends TestCase
      */
     public function emailAddressIsOnFreeDomain($freeEmail)
     {
-        $this->assertSame(true, (new IsBizMail())->isFreeMailAddress($freeEmail));
+        $this->assertTrue((new IsBizMail())->isFreeMailAddress($freeEmail));
     }
 
     /**
@@ -75,7 +75,7 @@ final class IsBizMailTest extends TestCase
      */
     public function emailAddressIsOnBusinessDomain($businessEmail)
     {
-        $this->assertSame(false, (new IsBizMail())->isFreeMailAddress($businessEmail));
+        $this->assertFalse((new IsBizMail())->isFreeMailAddress($businessEmail));
     }
 
     /**
@@ -91,7 +91,7 @@ final class IsBizMailTest extends TestCase
      */
     public function emailMatchesDomainPattern($freeEmail)
     {
-        $this->assertSame(true, (new IsBizMail())->isFreeMailAddress($freeEmail));
+        $this->assertTrue((new IsBizMail())->isFreeMailAddress($freeEmail));
     }
 
     /**
@@ -108,7 +108,7 @@ final class IsBizMailTest extends TestCase
      */
     public function emailAddressIsValid($businessEmail)
     {
-        $this->assertSame(true, (new IsBizMail())->isValid($businessEmail));
+        $this->assertTrue((new IsBizMail())->isValid($businessEmail));
     }
 
     /**
@@ -124,7 +124,7 @@ final class IsBizMailTest extends TestCase
      */
     public function emailAddressIsInvalid($invalidEmail)
     {
-        $this->assertSame(false, (new IsBizMail())->isValid($invalidEmail));
+        $this->assertFalse((new IsBizMail())->isValid($invalidEmail));
     }
 
     /**
