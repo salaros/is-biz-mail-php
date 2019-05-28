@@ -95,6 +95,22 @@ final class IsBizMailTest extends TestCase
     }
 
     /**
+     * Tests IsBizMail->isFreeMailAddress() against some disposable email addresses
+     *
+     * @param string $disposableAddress A disposable email address, like those provided by 10minutemail.com and similar
+     *
+     * @dataProvider getDisposableDomainSamples
+     * @covers      ::isFreeMailAddress
+     * @test
+     *
+     * @return void
+     */
+    public function emailMatchesDomainIsDisposable($disposableAddress)
+    {
+        $this->assertTrue((new IsBizMail())->isFreeMailAddress($disposableAddress));
+    }
+
+    /**
      * Tests IsBizMail->isValid() against some business emails
      *
      * @param string $businessEmail A business email address
@@ -197,6 +213,20 @@ final class IsBizMailTest extends TestCase
         return array_map(function ($patternDomains) {
             return array($patternDomains);
         }, self::getEmailSamples()->pattern);
+    }
+
+    /**
+     * Provides a list of disposable email addresses
+     * @doesNotPerformAssertions
+     * @coversNothing
+     *
+     * @return array
+     */
+    public function getDisposableDomainSamples()
+    {
+        return array_map(function ($disposableDomains) {
+            return array($disposableDomains);
+        }, self::getEmailSamples()->disposable);
     }
 
     /**
