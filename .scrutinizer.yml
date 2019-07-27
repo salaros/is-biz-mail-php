@@ -1,38 +1,35 @@
 checks:
-    php: true
-    javascript: true
+  php: true
 
 filter:
-    excluded_paths:
-        - "test/"
-    dependency_paths:
-        - "vendor/"
-        - "node_modules/"
+  excluded_paths:
+    - "test/"
+  dependency_paths:
+    - "vendor/"
+    - "node_modules/"
 
 build:
-    nodes:
-        analysis:
-            project_setup:
-                before:
-                    - make all
+  nodes:
+    analysis:
+      project_setup:
+        before:
+          - make all
 
-            tests:
-                override:
-                    - php-scrutinizer-run
-                    - js-scrutinizer-run
-
-        php:
-            environment:
-                php: 5.4
-
-        php71:
-            environment:
-                php: 7.1
-
-    tests:
+      tests:
         override:
-            -
-                command: 'vendor/bin/phpunit --coverage-clover=test/php/reports/clover.xml'
-                coverage:
-                    file: 'test/php/reports/clover.xml'
-                    format: 'clover'
+          - php-scrutinizer-run
+
+    php:
+      environment:
+        php: 5.4
+
+    php71:
+      environment:
+        php: 7.1
+
+  tests:
+    override:
+      - command: "vendor/bin/phpunit --coverage-clover=coverage/clover.xml"
+        coverage:
+          file: "coverage/clover.xml"
+          format: "clover"
