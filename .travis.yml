@@ -1,5 +1,6 @@
 # Allows use container-based infrastructure
 sudo: false
+dist: trusty
 
 # Project language
 language: php
