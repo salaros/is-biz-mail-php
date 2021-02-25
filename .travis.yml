@@ -1,6 +1,6 @@
 # Allows use container-based infrastructure
 sudo: false
-dist: trusty
+dist: xenial
 
 # Project language
 language: php
@@ -18,8 +18,9 @@ php:
 
 matrix:
   fast_finish: true
-  allow_failures:
-    - php: 8.0
+  include:
+    - php: 5.4
+      dist: trusty
 
 # disable the default submodule logic
 git:
