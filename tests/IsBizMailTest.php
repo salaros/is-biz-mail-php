@@ -155,6 +155,11 @@ final class IsBizMailTest extends TestCase
      */
     public function testisFreeMailAddressException200()
     {
+        if (version_compare(PHP_VERSION, '7.3.0') >= 0) {
+            $this->expectException(\InvalidArgumentException::class);
+            $this->expectExceptionCode(200);
+        }
+
         (new IsBizMail())->isFreeMailAddress('invalid@wildcard.*');
     }
 
@@ -170,6 +175,11 @@ final class IsBizMailTest extends TestCase
      */
     public function testisFreeMailAddressException100()
     {
+        if (version_compare(PHP_VERSION, '7.3.0') >= 0) {
+            $this->expectException(\InvalidArgumentException::class);
+            $this->expectExceptionCode(100);
+        }
+        
         (new IsBizMail())->isFreeMailAddress('notAnEmail');
     }
 

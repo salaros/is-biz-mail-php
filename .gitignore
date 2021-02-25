@@ -6,3 +6,5 @@ coverage/
 vendor/
 composer.lock
 test/php/reports/
+
+*.cache
