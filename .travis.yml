@@ -18,6 +18,8 @@ php:
 
 matrix:
   fast_finish: true
+  allow_failures:
+    - php: 8.0
 
 # disable the default submodule logic
 git:
