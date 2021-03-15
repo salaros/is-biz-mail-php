@@ -156,7 +156,7 @@ final class IsBizMailTest extends TestCase
     public function testisFreeMailAddressException200()
     {
         if (version_compare(PHP_VERSION, '7.3.0') >= 0) {
-            eval('$this->expectException(\InvalidArgumentException::class);'); // needed to avoid parse error on PHP 5.4
+            $this->expectException('InvalidArgumentException');
             $this->expectExceptionCode(200);
         }
 
@@ -176,7 +176,7 @@ final class IsBizMailTest extends TestCase
     public function testisFreeMailAddressException100()
     {
         if (version_compare(PHP_VERSION, '7.3.0') >= 0) {
-            eval('$this->expectException(\InvalidArgumentException::class);'); // needed to avoid parse error on PHP 5.4
+            $this->expectException('InvalidArgumentException');
             $this->expectExceptionCode(100);
         }
 
