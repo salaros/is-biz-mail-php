@@ -1,6 +1,6 @@
 Business Email Checker
-[![Build Status](https://travis-ci.org/salaros/is-biz-mail-php.svg?branch=master)](https://travis-ci.org/salaros/is-biz-mail-php)
-[![Coverage Status](https://coveralls.io/repos/github/salaros/is-biz-mail-php/badge.svg?branch=master)](https://coveralls.io/github/salaros/is-biz-mail-php?branch=master)
+[![Build Status](https://github.com/salaros/is-biz-mail-php/actions/workflows/php.yml/badge.svg)](https://github.com/salaros/is-biz-mail-php/actions)
+[![codecov](https://codecov.io/gh/salaros/is-biz-mail-php/branch/master/graph/badge.svg?token=C7IMT6E8L8)](https://codecov.io/gh/salaros/is-biz-mail-php)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/salaros/is-biz-mail-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/salaros/is-biz-mail-php/?branch=master)
 =======================
 [![License](https://poser.pugx.org/salaros/is-biz-mail/license)](https://packagist.org/packages/salaros/is-biz-mail)
