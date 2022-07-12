@@ -8,3 +8,5 @@ composer.lock
 test/php/reports/
 
 *.cache
+
+*.log
