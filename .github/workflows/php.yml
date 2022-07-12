@@ -56,3 +56,9 @@ jobs:
         run: composer install --prefer-dist --no-progress --ansi
 
       - run: vendor/bin/phpunit
+
+      - name: Publish to coveralls.io
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ github.token }}
+
