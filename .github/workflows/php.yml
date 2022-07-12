@@ -47,18 +47,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: 'recursive'
-
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
+          submodules: "recursive"
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --ansi
 
-      - run: vendor/bin/phpunit
+      - name: Run tests
+        run: phpunit
 
-      - name: Publish to coveralls.io
-        uses: coverallsapp/github-action@v1.1.2
+      - name: Send code coverage report to Codecov.io
+        uses: codecov/codecov-action@v2
         with:
-          github-token: ${{ github.token }}
-
+          token: ${{ secrets.CODECOV_TOKEN }}
