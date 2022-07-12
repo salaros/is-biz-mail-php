@@ -2,59 +2,57 @@ name: PHP Composer
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --ansi
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --ansi
-      
-    # to see the provided output, just to be sure
-    - run: vendor/bin/easy-ci php-versions-json
+      # to see the provided output, just to be sure
+      - run: vendor/bin/easy-ci php-versions-json
 
-    # here we create the json, we need the "id:" so we can use it in "outputs" bellow
-    -
-      id: output_data
-      run: echo "::set-output name=matrix::$(vendor/bin/easy-ci php-versions-json)"
+      # here we create the json, we need the "id:" so we can use it in "outputs" bellow
+      - id: output_data
+        run: echo "::set-output name=matrix::$(vendor/bin/easy-ci php-versions-json)"
 
     # here, we save the result of this 1st phase to the "outputs"
     outputs:
-        matrix: ${{ steps.output_data.outputs.matrix }}
-            
+      matrix: ${{ steps.output_data.outputs.matrix }}
+
   unit_tests:
-        needs: build
-        
-        runs-on: ubuntu-latest
+    needs: build
 
-        strategy:
-            fail-fast: false
-            matrix:
-                php: ${{ fromJson(needs.build.outputs.matrix) }}
+    runs-on: ubuntu-latest
 
-        # continue with tests
-        steps:
-            # ...
-            -   run: vendor/bin/phpunit
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ${{ fromJson(needs.build.outputs.matrix) }}
+
+    # continue with tests
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --ansi
+
+      - run: vendor/bin/phpunit
