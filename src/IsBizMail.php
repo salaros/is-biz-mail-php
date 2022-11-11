@@ -522,7 +522,7 @@ class IsBizMail
             "kaazoo.com", "kabissa.org", "kairouan.cc", "kaixo.com", "kakadua.net", "kalapi.org",
             "kalluritimes.com", "kalpoint.com", "kamsg.com", "kann.so", "kanoodle.com", "kansas.usa.com",
             "kaovo.com", "karak.cc", "kariplan.com", "kartvelo.com", "kasmail.com", "kaspop.com",
-            "katamail.com", "kataweb.it", "kayafmmail.co.za", "kazelink.ml", "kcrw.de", "keepmymail.com",
+            "karenkey.com", "katamail.com", "kataweb.it", "kayafmmail.co.za", "kazelink.ml", "kcrw.de", "keepmymail.com",
             "keinhirn.de", "keipino.de", "kekita.com", "keko.com.ar", "kemptvillebaseball.com", "kennedy808.com",
             "kentucky.usa.com", "keptprivate.com", "keromail.com", "khaimah.cc", "khartoum.cc", "khobar.cc",
             "kiani.com", "kickboxing.com", "kidrock.com", "killmail.com", "killmail.net", "kimo.com",
