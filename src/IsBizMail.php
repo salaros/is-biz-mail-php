@@ -852,7 +852,7 @@ class IsBizMail
             "tabasheer.com", "tabouk.cc", "tafmail.com", "tafoi.gr", "taglead.com", "tagmymedia.com",
             "tagyourself.com", "tajikistan.cc", "talk21.com", "talkcity.com", "talkinator.com", "tangiers.cc",
             "tangmonkey.com", "tanta.cc", "tanukis.org", "tapchicuoihoi.com", "taphear.com", "tatanova.com",
-            "tattoodesign.com", "taxcutadvice.com", "tayef.cc", "taylorventuresllc.com", "tb-on-line.net", "teachers.org",
+            "tattoodesign.com", "taxcutadvice.com", "tayef.cc", "tb-on-line.net", "teachers.org",
             "teamster.net", "tech69.com", "tech-center.com", "techemail.com", "techgroup.me", "techie.com",
             "technisamail.co.za", "technologist.com", "teenchatnow.com", "teenmail.co.uk", "teenmail.co.za", "teewars.org",
             "tefl.ro", "tejary.com", "telebot.com", "telecomix.pl", "telefonica.net", "telegraf.by",
